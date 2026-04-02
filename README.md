@@ -15,9 +15,9 @@ most tutorials give you the full model and explain it after. here we build it pi
 
 | Part | Topic | Status |
 |------|-------|--------|
-| Part 1 | Bigram Language Model | done |
-| Part 2 | Self Attention | coming soon |
-| Part 3 | Full Transformer |  coming soon |
+| Part 1 | Bigram Language Model | ✅ done |
+| Part 2 | Self Attention | 🔨 coming soon |
+| Part 3 | Full Transformer | 🔨 coming soon |
 
 ## How to run
 
