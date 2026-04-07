@@ -9,15 +9,28 @@ most tutorials give you the full model and explain it after. here we build it pi
 - what is a language model and how it predicts the next character
 - how to build a tokenizer (text → numbers)
 - how to build a Bigram model using `nn.Embedding`
-- how to train it and generate text
+- how self-attention works and why it matters
+- how to build a full transformer with multi-head attention, LayerNorm, and residual connections
+- how RoPE (Rotary Position Embedding) works and why modern LLMs use it
 
 ## Series
 
 | Part | Topic | Status |
 |------|-------|--------|
-| Part 1 | Bigram Language Model |  done |
-| Part 2 | Self Attention |  coming soon |
-| Part 3 | Full Transformer |  coming soon |
+| Part 1 | Bigram Language Model | ✅ done |
+| Part 2 | Self Attention | ✅ done |
+| Part 3 | Full Transformer + RoPE | ✅ done |
+
+## Results
+
+Trained on 三体 (The Three-Body Problem) Chinese text — 912K characters, 3648 unique chars.
+
+| Config | Steps | Val Loss |
+|--------|-------|----------|
+| Baseline (absolute position embedding) | 5000 | 4.07 |
+| RoPE | 10000 | 3.83 |
+
+RoPE reaches lower loss and generalizes better — consistent with how modern LLMs like Qwen and LLaMA use it.
 
 ## How to run
 
@@ -27,8 +40,6 @@ cd build-llm-from-scratch
 pip install torch
 jupyter notebook
 ```
-
-then open `how_to_build_a_basic_LanguageModel.ipynb` and run all cells.
 
 ## About me
 
