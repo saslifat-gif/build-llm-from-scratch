@@ -25,10 +25,23 @@ most tutorials give you the full model and explain it after. here we build it pi
 
 Trained on 三体 (The Three-Body Problem) Chinese text — 912K characters, 3648 unique chars.
 
-| Config | Steps | Val Loss |
-|--------|-------|----------|
-| Baseline (absolute position embedding) | 5000 | 4.07 |
-| RoPE | 10000 | 3.83 |
+hyperemeters:
+vocab_size = 3648
+block_size = 128
+batch_size = 8
+n_embd = 128
+n_head = 8
+n_layer = 4
+
+model parameters: 1.729344M
+
+| Config | Steps | Train Loss | Val Loss |
+|--------|-------|------------|----------|
+| Absolute | 4500 | 3.80 | 3.94 |
+| Absolute | 9000 | 3.50 | 3.78 |
+| RoPE | 4500 | 3.50 | 3.75 |
+| RoPE | 9000 | 3.23 | 3.70 |
+* RoPE best val loss: 3.69 at step 7500 (overfitting after)
 
 RoPE reaches lower loss and generalizes better — consistent with how modern LLMs like Qwen and LLaMA use it.
 
@@ -43,5 +56,5 @@ jupyter notebook
 
 ## About me
 
-I am a CS student building toward a ML engineer role at HuggingFace.  
+I am a AI student building toward a ML engineer.  
 find me on [HuggingFace](https://huggingface.co/lifatsastain) | [GitHub](https://github.com/saslifat-gif)
